@@ -5,6 +5,7 @@ import { BlogHomeList } from './components/BlogHome'
 import Header from './components/Header'
 import { SearchBox } from './components/SearchBox'
 import { SearchBoxList } from './components/SearchBoxList'
+import SignInButton from './components/SignInButton'
 function App() {
   const [count, setCount] = useState(0)
   const [results, setResults] = useState([])
@@ -48,7 +49,10 @@ function App() {
   ]
   return (
     <main>
-      <Header/>
+      <div class='flex bg-black font-semibold'>
+        <Header/>
+        <SignInButton/>
+      </div>
       <SearchBox data={blogs} setResults={setResults}/>
       <SearchBoxList results={results}/>
       <BlogHomeList blogs={blogs}/>
