@@ -1,4 +1,3 @@
-const User = require("../models/user")
 const { userCreate , checkUserPassword } = require("../repositories/userRepository")
 const jwt = require('jsonwebtoken')
 
