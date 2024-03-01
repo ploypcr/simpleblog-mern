@@ -9,6 +9,7 @@ import SignInButton from './components/SignInButton'
 function App() {
   const [count, setCount] = useState(0)
   const [results, setResults] = useState([])
+  const token = localStorage.getItem('accessToken');
   const blogs = [
     {id : 1,
     name : "Aroi mak mak",
@@ -51,7 +52,7 @@ function App() {
     <main>
       <div class='flex bg-black font-semibold'>
         <Header/>
-        <SignInButton/>
+        {token ? <SignInButton/> : null}
       </div>
       <SearchBox data={blogs} setResults={setResults}/>
       <SearchBoxList results={results}/>
